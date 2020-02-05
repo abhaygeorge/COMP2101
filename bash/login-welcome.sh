@@ -18,12 +18,19 @@
 # Variables   #
 ###############
 
-title="AVENGER"
 myname=$USER
 hostname=$(hostname)
 hours=$(date +%H)
 min=$(date +%M)
 meridian=$(date +%p)
+day=$( date +%A)
+[ $day == "Monday" ] && title="Come on"
+[ $day == "Tuesday" ] && title="Go Go"
+[ $day == "Wednesday" ] && title="You can"
+[ $day == "Thursday" ] && title="Fight Fight"
+[ $day == "Friday" ] && title="KIck some Asses"
+[ $day == "Saturday" ] && title="Sleep"
+[ $day == "Sunday" ] && title="Sleep"
 
 ###############
 # Main        #
@@ -31,6 +38,6 @@ meridian=$(date +%p)
 
 myvar="Welcome to planet $hostname, $title $myname
 
-It is $hours:$min $meridian on $( date +%A)"
+It is $hours:$min $meridian on $day"
 
 cowsay $myvar
